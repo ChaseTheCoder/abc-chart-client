@@ -8,13 +8,13 @@ function App() {
   const [last, setLast] = useState('')
 
   useEffect(() => {  // initial API request to database
-    Axios.get('http://localhost:3001/getStudents').then((response) => {
+    Axios.get('https://abc-chart.herokuapp.com/getStudents').then((response) => {
       setStudents(response.data) // sets list of students to current data in API
     })
   }, []);
 
   const createStudent = () => {
-    Axios.post('http://localhost:3001/createStudent', {
+    Axios.post('https://abc-chart.herokuapp.com/createStudent', {
       first, // first: first,-if two are same same just put it once
       last //last: last  -makes it look better
     }).then((response) => {

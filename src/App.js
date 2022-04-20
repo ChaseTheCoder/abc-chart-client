@@ -13,13 +13,13 @@ function App() {
   // const [consequences, setConsequence] = useState('');
 
   useEffect(() => {  // initial API request to database
-    Axios.get('https://abc-chart.herokuapp.com/getStudents').then((response) => {
+    Axios.get('https://abc-chart.herokuapp.com/students/getStudents').then((response) => {
       setStudents(response.data) // sets list of students to current data in API
     })
   }, []);
 
   const createStudent = () => {
-    Axios.post('https://abc-chart.herokuapp.com/createStudent', {
+    Axios.post('https://abc-chart.herokuapp.com/students/createStudent', {
       initials, // first: first,-if two are same same just put it once
       // last //last: last  -makes it look better
     }).then((response) => {
